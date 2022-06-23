@@ -19,7 +19,7 @@ def homepage():
             uResponse = requests.get(url)
             page_html = bs(uResponse.text, "html.parser")  # finds html tags
             books = page_html.findAll("li", {"class": "item pb-3 pt-3 border-bottom"})  # get all books
-            for b in books[20]:
+            for b in books[:10]:
                 book = {}
                 try:
                     book["name"] = b.div.div.div.h4.findAll("a")[0].text
@@ -52,7 +52,7 @@ def homepage():
                     book["buy"] = "No link"
                 all_books.append(book)
     except Exception as e:
-        return 'something is wrong'
+        return e
     return render_template("index.html")  # showcase an html page, by default it has to be in templates folder
 
 
