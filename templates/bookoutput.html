@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Details</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+<div class="table-users">
+    <div class="header">Book Details</div>
+    <table cellspacing="0">
+        <tr>
+            <td><label>Name</label></td>
+            <td><label>{{book['name']}}</label></td>
+        </tr>
+        <tr>
+            <td><label>Author</label></td>
+            <td><label>{{book['author']}}</label></td>
+        </tr>
+        <tr>
+            <td><label>Description</label></td>
+            <td><label>{{book['description']}}</label></td>
+        </tr>
+        <tr>
+            <td><a href={{book['link']}}>More on book</a></td>
+            <td><a href={{book['buy']}}>Buy Book</a></td>
+        </tr>
+    </table>
+</div>
+
+<div class="form1">
+    <form action="/" method="GET">
+        <input type="submit" value="BackToSearch">
+    </form>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Top 50 books</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+<div class="form">
+    <form action="/download" method="POST">
+        <input type="submit" value="Download to CSV">
+    </form>
+</div>
+
+<div class="table-users">
+    <div class="header">Books</div>
+
+    <table cellspacing="0">
+        <tr>
+            <th width="230">Name</th>
+            <th>Author</th>
+            <th width="300">Description</th>
+            <th>Link</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{book['name']}}</td>
+            <td>{{book['author']}}</td>
+            <td>{{book['description'].split('.')[0]}}.</td>
+            <td><a href={{book['link']}}>More on book</a></td>
+            <td><a href={{book['buy']}}>Buy Book</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="form1">
+    <form action="/" method="GET">
+        <input type="submit" value="BackToSearch">
+    </form>
+</div>
+
+
+</body>
+
+</html>
