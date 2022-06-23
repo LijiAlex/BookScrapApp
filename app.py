@@ -19,7 +19,7 @@ def homepage():
             uResponse = requests.get(url)
             page_html = bs(uResponse.text, "html.parser")  # finds html tags
             books = page_html.findAll("li", {"class": "item pb-3 pt-3 border-bottom"})  # get all books
-            for b in books:
+            for b in books[20]:
                 book = {}
                 try:
                     book["name"] = b.div.div.div.h4.findAll("a")[0].text
