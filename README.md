@@ -10,3 +10,6 @@ Only 10 books are scrapped to reduce turn over time of scrapping.
 3. Else it will take you to the page containing details of all books.
 4. Both summarized page and all books page contains option to know more on book and buy the book.
 5. All book details can also be downloaded to a CSV file.
+
+### Youtube Link
+https://youtu.be/5wMJoNI56UE
